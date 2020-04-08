@@ -2,7 +2,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 # Data file and creating an empty graph to use
-g_data ="glastonAD_bands.txt"
+g_data ="glastonAD_bands_ext.txt"
 Graphtype=nx.Graph()
 
 # How to read from a file from the edge list
@@ -22,7 +22,7 @@ for component in list(nx.connected_components(G)):
 '''
 # The second takes out components of less than a certain amount
 for component in list(nx.connected_components(G)):
-    if len(component)<20:
+    if len(component)<10:
         for node in component:
             G.remove_node(node)
 
